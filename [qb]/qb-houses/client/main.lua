@@ -713,6 +713,7 @@ local function getDataForHouseTier(house, coords)
         [14] = function(coords) return exports['qb-interior']:CreateStore1(coords) end,
         [15] = function(coords) return exports['qb-interior']:CreateWarehouse1(coords) end,
         [16] = function(coords) return exports['qb-interior']:CreateFurniMotelStandard(coords) end
+     -- [17] = function(coords) return exports['qb-interior']:CreateEntrepot1(coords) end
     }
 
     if not shells[houseTier] then
