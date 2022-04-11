@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CPackFileMetaData>
+  <MapDataGroups/>
+  <HDTxdBindingArray/>
+  <imapDependencies/>
+  <imapDependencies_2>
+    <Item>
+      <imapName>realestate</imapName>
+      <manifestFlags/>
+      <itypDepArray>
+        <Item>v_construction</Item>
+        <Item>v_set_pieces</Item>
+        <Item>int_lev_des</Item>
+        <Item>v_office</Item>
+        <Item>v_garden</Item>
+        <Item>v_traffic_lights</Item>
+        <Item>v_minigame</Item>
+        <Item>v_electrical</Item>
+        <Item>int_residential</Item>
+        <Item>lev_des</Item>
+        <Item>v_fastfood</Item>
+        <Item>v_bar</Item>
+        <Item>v_coin_op</Item>
+        <Item>int_retail</Item>
+        <Item>cutsobjects</Item>
+        <Item>v_potted</Item>
+        <Item>v_ext_veg</Item>
+      </itypDepArray>
+    </Item>
+  </imapDependencies_2>
+  <itypDependencies_2/>
+  <Interiors/>
+</CPackFileMetaData>

@@ -67,28 +67,12 @@ $(document).on('click', '#submit-spawn', function(evt){
     }
 });
 
-function setupLocations(locations, myHouses) {
-    var parent = $('.spawn-locations')
-    $(parent).html("");
-
-    $(parent).append('<div class="loclabel" id="location" data-location="null" data-type="lab" data-label="Where would you like to start?"><p><span id="null">Where would you like to start?</span></p></div>')
-    
-    setTimeout(function(){
-        $(parent).append('<div class="location" id="location" data-location="current" data-type="current" data-label="Last Location"><p><span id="current-location">Last Location</span></p></div>');
-        
-        $.each(locations, function(index, location){
-            $(parent).append('<div class="location" id="location" data-location="'+location.location+'" data-type="normal" data-label="'+location.label+'"><p><span id="'+location.location+'">'+location.label+'</span></p></div>')
-        });
-
-        if (myHouses != undefined) {
-            $.each(myHouses, function(index, house){
-                $(parent).append('<div class="location" id="location" data-location="'+house.house+'" data-type="house" data-label="'+house.label+'"><p><span id="'+house.house+'">'+house.label+'</span></p></div>')
-            });
-        }
-
-        $(parent).append('<div class="submit-spawn" id="submit-spawn"><p><span id="spawn-label"></span></p></div>');
-        $('.submit-spawn').hide();
-    }, 100)
+function setupLocations() {
+    $(".spawn-locations").fadeOut(250);
+    $.post('https://qb-spawn/spawnplayer', JSON.stringify({
+        spawnloc: 'current',
+        typeLoc: 'current'
+    }));
 }
 
 function setupApps(apps) {

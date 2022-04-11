@@ -106,6 +106,13 @@ Config.MenuItems = {
                 icon = 'home',
                 items = {
                     {
+                        id = 'houseplayermenu',
+                        title = 'List of owned houses',
+                        icon = 'laptop-house',
+                        type = 'client',
+                        event = 'qb-realestate:client:OpenOwnedHouseListMenu',
+                        shouldClose = true
+                    }, {
                         id = 'givehousekey',
                         title = 'Give House Keys',
                         icon = 'key',
@@ -562,6 +569,16 @@ Config.JobInteractions = {
             icon = 'truck-pickup',
             type = 'client',
             event = 'qb-tow:client:TowVehicle',
+            shouldClose = true
+        }
+    },
+    ["realestate"] = {
+        {
+            id = 'housemenu',
+            title = 'List of houses',
+            icon = 'laptop-house',
+            type = 'client',
+            event = 'qb-realestate:client:OpenHouseListMenu',
             shouldClose = true
         }
     },

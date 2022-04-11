@@ -22,14 +22,17 @@ local Translations = {
         ["remove_key_from"] = "Keys Have Been Removed From %{firstname} %{lastname}",
         ["already_keys"] = "This person already has the keys of the house!",
         ["something_wrong"] = "Something went wrong try again!",
-        ["nobody_at_door"] = 'There is nobody at the door...'
+        ["nobody_at_door"] = 'There is nobody at the door...',
+        ["no_id"] = "Did you forget to enter ID?"
     },
     success = {
         ["unlocked"] = "House is unlocked!",
         ["home_invasion"] = "The door is now open.",
         ["lock_invasion"] = "You locked the house again..",
         ["recieved_key"] = "You have the keys of %{value} recieved!",
-        ["house_purchased"] = "You have successfully bought the house!"
+        ["house_purchased"] = "You have successfully bought the house!",
+        ["sold_house"] = "You successfully sold your house!",
+        ["sold_house_target"] = "House is now all yours!"
     },
     info = {
         ["door_ringing"] = "Someone is ringing the door!",

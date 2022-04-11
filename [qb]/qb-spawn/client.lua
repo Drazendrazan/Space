@@ -41,24 +41,10 @@ end)
 
 RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
     if not new then
-        QBCore.Functions.TriggerCallback('qb-spawn:server:getOwnedHouses', function(houses)
-            local myHouses = {}
-            if houses ~= nil then
-                for i = 1, (#houses), 1 do
-                    myHouses[#myHouses+1] = {
-                        house = houses[i].house,
-                        label = Config.Houses[houses[i].house].adress,
-                    }
-                end
-            end
-
-            Wait(500)
-            SendNUIMessage({
-                action = "setupLocations",
-                locations = QB.Spawns,
-                houses = myHouses,
-            })
-        end, cData.citizenid)
+        SendNUIMessage({
+            action = "setupLocations",
+            locations = QB.Spawns,
+        })
     elseif new then
         SendNUIMessage({
             action = "setupAppartements",
@@ -187,6 +173,7 @@ RegisterNUICallback('spawnplayer', function(data)
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
         PostSpawnPlayer()
+        SetDisplay(false)
     elseif type == "house" then
         PreSpawnPlayer()
         TriggerEvent('qb-houses:client:enterOwnedHouse', location)

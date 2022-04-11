@@ -268,6 +268,17 @@ QBShared.Jobs = {
             },
         },
 	},
+    ['planepilot'] = {
+        label = 'Delivery',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            ['0'] = {
+                name = 'Pilot',
+                payment = 250
+            },
+        },
+    },
 	['hotdog'] = {
 		label = 'Hotdog',
 		defaultDuty = true,

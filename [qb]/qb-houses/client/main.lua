@@ -1452,6 +1452,34 @@ RegisterNetEvent('qb-house:client:RefreshHouseTargets', function ()
     SetHousesEntranceTargets()
 end)
 
+RegisterNetEvent('qb-houses:client:deletehouses', function(selectedHouse)
+    Config.Houses[selectedHouse.name] = nil
+    SetClosestHouse()
+end)
+
+RegisterNetEvent('qb-houses:client:Sellhouse', function(id)
+    local player, distance = GetClosestPlayer()
+    if player ~= -1 and distance < 2.5 and ClosestHouse ~= nil then
+        local playerId = id
+        local ped = PlayerPedId()
+        local pedpos = GetEntityCoords(ped)
+        local housedist = #(pedpos - vector3(Config.Houses[ClosestHouse].coords.enter.x, Config.Houses[ClosestHouse].coords.enter.y, Config.Houses[ClosestHouse].coords.enter.z))
+        if playerId == nil then
+            QBCore.Functions.Notify(Lang:t("error.no_id"), "error")
+        else
+            if housedist < 10 then
+                TriggerServerEvent('qb-houses:server:Sellhouse', playerId, ClosestHouse)
+            else
+                QBCore.Functions.Notify(Lang:t("error.no_door"), "error")
+            end
+        end
+    elseif ClosestHouse == nil then
+        QBCore.Functions.Notify(Lang:t("error.no_house"), "error")
+    else
+        QBCore.Functions.Notify(Lang:t("error.no_one_near"), "error")
+    end
+end)
+
 -- NUI Callbacks
 
 RegisterNUICallback('HasEnoughMoney', function(data, cb)
